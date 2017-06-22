@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="202.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.logDialogController">
+   <children>
+      <Label layoutX="38.0" layoutY="56.0" text="Username:" />
+      <Label layoutX="38.0" layoutY="93.0" text="Password:" />
+      <TextField fx:id="username" layoutX="108.0" layoutY="51.0" promptText="administer" />
+      <PasswordField fx:id="password" layoutX="108.0" layoutY="88.0" promptText="administer" />
+      <Button fx:id="log_in" layoutX="63.0" layoutY="141.0" mnemonicParsing="false" onAction="#Log" text="Log in" />
+      <Button fx:id="newAccount" layoutX="153.0" layoutY="141.0" mnemonicParsing="false" onAction="#newAccount" text="New Account" />
+   </children>
+</AnchorPane>
