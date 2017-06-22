@@ -104,6 +104,10 @@ public class MenuController implements Initializable {
 	public void Log_out(){
 		if(user!=null){
 			user=null;
+			ExitArea.setText("");
+			InputArea.setText("");
+			OutputArea.setText("");
+			fileName.setText("Filename");
 			Alert error=new Alert(Alert.AlertType.INFORMATION,"Log Out Successed");
 			Button confirm=new Button();
 			error.show();

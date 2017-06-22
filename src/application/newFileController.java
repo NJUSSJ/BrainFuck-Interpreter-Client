@@ -34,7 +34,7 @@ public class newFileController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		type.getItems().addAll(".bf",".oOk");
+		type.getItems().addAll(".bf",".Ook");
 	}
 
 
