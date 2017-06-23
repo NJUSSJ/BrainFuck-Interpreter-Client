@@ -19,7 +19,7 @@
     </Label>
     <Label layoutX="24.0" layoutY="104.0" prefWidth="60.0" text="File Type:" />
       <Button fx:id="fnish" layoutX="91.0" layoutY="145.0" mnemonicParsing="false" onAction="#finish" text="Fnish" />
-      <Button fx:id="conceal" layoutX="173.0" layoutY="145.0" mnemonicParsing="false" text="Cancel" />
+      <Button fx:id="conceal" layoutX="173.0" layoutY="145.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
       <ComboBox fx:id="type" layoutX="98.0" layoutY="100.0" prefWidth="150.0" />
   </children>
 </AnchorPane>

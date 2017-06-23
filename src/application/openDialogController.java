@@ -21,15 +21,21 @@ public class openDialogController implements Initializable {
 	@FXML
 	private Button open;
 
-	public String list;
+
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-
-		for(int i=0;i<MenuController.user.getList().length;i++){
-			box.getItems().add(MenuController.user.getList()[i]);
+		try {
+			String list=ClientRunner.remoteHelper.getIOService().readFileList(MenuController.user.getUsername());
+			String items[]=list.split(" ");
+			for(int i=0;i<items.length;i++){
+			box.getItems().add(items[i]);
 		}
+		} catch (RemoteException e) {
+			// TODO: handle exception
+		}
+		
 
 	}
 

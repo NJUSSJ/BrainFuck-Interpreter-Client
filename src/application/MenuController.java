@@ -2,6 +2,7 @@ package application;
 
 import java.net.URL;
 import java.rmi.RemoteException;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -44,6 +45,10 @@ public class MenuController implements Initializable {
 
 	@FXML
 	private MenuItem Save;
+	
+	@FXML
+	private MenuItem Commit;
+	
 	//Run
 	@FXML
 	private MenuItem Execute;
@@ -207,6 +212,43 @@ public class MenuController implements Initializable {
 		    });
 		}
 
+	}
+	
+	//Commit
+	public void Commit(){
+		if(user!=null){
+			try {
+				java.util.Date now=new java.util.Date();
+				SimpleDateFormat dateFormat=new SimpleDateFormat("yyMMddhhmm");
+				String date = dateFormat.format( now ); 
+				String temp=user.getPomptFile();
+				if(user.getPomptFile().indexOf(")")>=0){
+				temp=user.getPomptFile().substring(0, user.getPomptFile().indexOf("("));
+				}
+				String prompt_name=temp+"("+date+")";
+				
+				boolean sign=ClientRunner.remoteHelper.getIOService().writeFilelist(user.getUsername(),prompt_name,true,ExitArea.getText());
+				if(sign){
+					Alert error=new Alert(Alert.AlertType.INFORMATION,"此版本已保存！");
+				    Button confirm=new Button();
+				    error.show();
+				    confirm.setOnAction((ActionEvent e)->{
+				    	error.close();
+				    });
+				}
+				
+			} catch (RemoteException e) {
+				// TODO: handle exception
+			}
+		}
+		else{
+			Alert error=new Alert(Alert.AlertType.INFORMATION,"Please Log in!");
+		    Button confirm=new Button();
+		    error.show();
+		    confirm.setOnAction((ActionEvent e)->{
+		    	error.close();
+		    });
+		}
 	}
 
 }

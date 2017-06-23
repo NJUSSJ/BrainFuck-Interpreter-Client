@@ -53,6 +53,10 @@ public class newFileController implements Initializable {
 		}
 	}
 
+	public void cancel(){
+		stage.close();
+	}
+
 	public void setStage(Stage stage){
 		this.stage=stage;
 	}

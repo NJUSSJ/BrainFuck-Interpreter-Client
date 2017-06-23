@@ -23,6 +23,7 @@
             <MenuItem fx:id="New" mnemonicParsing="false" onAction="#New" text="New" />
             <MenuItem fx:id="Open" mnemonicParsing="false" onAction="#Open" text="Open" />
             <MenuItem fx:id="Save" mnemonicParsing="false" onAction="#Save" text="Save" />
+                  <MenuItem fx:id="Commit" mnemonicParsing="false" onAction="#Commit" text="Commit" />
           </items>
         </Menu>
         <Menu fx:id="Run" mnemonicParsing="false" text="Run">
