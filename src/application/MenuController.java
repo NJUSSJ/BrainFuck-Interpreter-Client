@@ -219,7 +219,7 @@ public class MenuController implements Initializable {
 		if(user!=null){
 			try {
 				java.util.Date now=new java.util.Date();
-				SimpleDateFormat dateFormat=new SimpleDateFormat("yyMMddhhmm");
+				SimpleDateFormat dateFormat=new SimpleDateFormat("yyMMddhhmmss");
 				String date = dateFormat.format( now ); 
 				String temp=user.getPomptFile();
 				if(user.getPomptFile().indexOf(")")>=0){

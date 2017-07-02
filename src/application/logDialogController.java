@@ -93,12 +93,21 @@ public class logDialogController implements Initializable {
 				MenuController.user=user;
 			}
 			else{
-				Alert error=new Alert(Alert.AlertType.INFORMATION,"User has existed.");
+				if(username.getText()==null||username.getText().equals("")){
+					Alert error=new Alert(Alert.AlertType.INFORMATION,"用户名不能为空.");
+					Button confirm=new Button();
+					error.show();
+					confirm.setOnAction((ActionEvent e)->{
+						 error.close();
+					});
+				}
+				else{Alert error=new Alert(Alert.AlertType.INFORMATION,"User has existed.");
 				Button confirm=new Button();
 				error.show();
 				confirm.setOnAction((ActionEvent e)->{
 					 error.close();
 				});
+				}
 			}
 		} catch (RemoteException e) {
 			e.printStackTrace();
