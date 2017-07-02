@@ -24,6 +24,7 @@
             <MenuItem fx:id="Open" mnemonicParsing="false" onAction="#Open" text="Open" />
             <MenuItem fx:id="Save" mnemonicParsing="false" onAction="#Save" text="Save" />
                   <MenuItem fx:id="Commit" mnemonicParsing="false" onAction="#Commit" text="Commit" />
+                  <MenuItem fx:id="Version" mnemonicParsing="false" onAction="#Version" text="Version" />
           </items>
         </Menu>
         <Menu fx:id="Run" mnemonicParsing="false" text="Run">

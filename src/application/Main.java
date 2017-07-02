@@ -113,4 +113,29 @@ public class Main extends Application {
 			// TODO: handle exception
 		}
 	}
+	
+	//VersionDialog
+		public static void showVersionDialog(){
+			try {
+				FXMLLoader loader=new FXMLLoader();
+				loader.setLocation(Main.class.getResource("/application/versionDialog.fxml"));
+
+				AnchorPane page=(AnchorPane)loader.load();
+				Scene scene=new Scene(page);
+				Stage newStage=new Stage();
+
+				newStage.setTitle("Version");
+				newStage.initModality(Modality.WINDOW_MODAL);
+				newStage.initOwner(primaryStage);
+				newStage.setScene(scene);
+
+				//set controller stage
+				versionDialogController controller=loader.getController();
+				controller.setStage(newStage);
+
+				newStage.showAndWait();
+			} catch (IOException e) {
+				// TODO: handle exception
+			}
+		}
 }

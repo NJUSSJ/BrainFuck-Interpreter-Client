@@ -49,6 +49,9 @@ public class MenuController implements Initializable {
 	@FXML
 	private MenuItem Commit;
 	
+	@FXML
+	private MenuItem Version;
+	
 	//Run
 	@FXML
 	private MenuItem Execute;
@@ -197,11 +200,12 @@ public class MenuController implements Initializable {
 
 	//Open
 	public void Open(){
-		if_newfile=false;
+		
 		if(user!=null){
 			Main.showOpenDialog();
 			ExitArea.setText(MenuController.user.getCode());
 			fileName.setText(MenuController.user.getPomptFile());;
+			if_newfile=false;
 		}
 		else{
 			Alert error=new Alert(Alert.AlertType.INFORMATION,"Please Log in!");
@@ -250,5 +254,27 @@ public class MenuController implements Initializable {
 		    });
 		}
 	}
+	
+	
+	//Version
+		public void Version(){
+			
+			if(user!=null&&user.getPomptFile()!=null){
+				
+				Main.showVersionDialog();
+				ExitArea.setText(MenuController.user.getCode());
+				fileName.setText(MenuController.user.getPomptFile());;
+				if_newfile=false;
+			}
+			else{
+				Alert error=new Alert(Alert.AlertType.INFORMATION,"Please Log in and open a file!");
+			    Button confirm=new Button();
+			    error.show();
+			    confirm.setOnAction((ActionEvent e)->{
+			    	error.close();
+			    });
+			}
+
+		}
 
 }

@@ -34,6 +34,7 @@ public class openDialogController implements Initializable {
 		}
 		} catch (RemoteException e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 
